@@ -1,0 +1,5 @@
+﻿  overloading.cpp
+C:\Users\HP\Documents\c++ projects\source\repos\overloading\overloading\overloading.cpp(16,11): error C2872: 'string': ambiguous symbol
+C:\Users\HP\Documents\c++ projects\source\repos\overloading\overloading\overloading.cpp(3,7): message : could be 'string'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\xstring(4920,7): message : or       'std::string'
+C:\Users\HP\Documents\c++ projects\source\repos\overloading\overloading\overloading.cpp(16,13): error C2533: 'string::{ctor}': constructors not allowed a return type

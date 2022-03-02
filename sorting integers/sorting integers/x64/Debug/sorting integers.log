@@ -1,0 +1,2 @@
+﻿  sorting integers.cpp
+C:\Users\HP\Documents\c++ projects\source\repos\sorting integers\sorting integers\sorting integers.cpp(10): error C4700: uninitialized local variable 'num' used

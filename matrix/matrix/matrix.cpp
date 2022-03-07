@@ -1,66 +1,125 @@
 #include<iostream>
 using namespace std;
 class matrix {
-	int** p;
-	int d1, d2;
 public:
-	matrix(int x, int y);
-	void getelement( int i, int j, int val )
-	{
-		p[i][j] = val;
-	}
-	int& putelement(int i, int j) {
-		return p[i][j];
-	}
+	void matrix_add();
 	void matrix_transpose();
+	void matrix_multiply();
+	void matrix_trace();
 };
-matrix::matrix(int x, int y)
-{
-	d1 = x;
-	d2 = y;
-	p = new int* [d1];
-	for (int i = 0; i < d1; i++)
-		p[i] = new int[d2];
+void matrix::matrix_add() {
+	int a[10][10], b[10][10], sum[10][10];
+	int m, n, i, j;
+	cout << "Enter number of rows and coloumns of matrix : ";
+	cin >> m >> n;
+	cout << "Enter elements of first matrix : ";
+	for (i = 0; i < m; i++) {
+		for (j = 0; j < n; j++) {
+			cin >> a[i][j];
+		}
+	}
+	cout << "Enter elements of second matrix : ";
+	for (i = 0; i < m; i++) {
+		for (j = 0; j < n; j++) {
+			cin >> b[i][j];
+		}
+	}
+	for (i = 0; i < m; i++) {
+		for (j = 0; j < n; j++) {
+			sum[i][j] = a[i][j] + b[i][j];
+		}
+	}
+	cout << "Sum of the two matrices is: ";
+	cout << endl;
+	for (i = 0; i < m; i++) {
+		for (j = 0; j < n; j++)
+			cout << sum[i][j]<<" ";
+		cout << endl;
+	}
 }
-void matrix::matrix_transpose(){
-	int t[10][10], a[6][6];
-	for(int i=0;i<d1;i++)
-		for (int j = 0; j < d2; j++) {
-			t[j][i] = a[i][j];
+void matrix::matrix_transpose() {
+	int a[10][10], m, n, i, j;
+	cout << "Enter number of rows and coloumns of the matrix : ";
+	cin >> m >> n;
+	cout << "Enter elements : ";
+	for (i = 0; i < m; i++) {
+		for (j = 0; j < n; j++) {
+			cin >> a[i][j];
 		}
-	cout << "The transpose of the matrix is: " << endl;
-	for (int i = 0; i < d1; i++)
-		for (int j = 0; j < d2; j++) {
-			cout << t[i][j] << " " << endl;
+	}
+	cout << "The entered Matrix is: \n";
+	for (i = 0; i < m; i++) {
+		for (j = 0; j < n; j++)
+			cout << a[i][j] << " ";
+			cout<< endl;
+		
+	}
+	cout << "Transpose : \n";
+	for (i = 0; i < n; i++) {
+		for (j = 0; j < m; j++) 
+			cout << a[j][i] << " ";
+			cout << endl;
+		
+	}
+}
+void matrix::matrix_multiply() {
+	int a[10][10], b[10][10], mult[10][10];
+	int m, n, i, j;
+	cout << "Enter number of rows and coloumns of matrix : ";
+	cin >> m >> n;
+	cout << "Enter elements of first matrix : ";
+	for (i = 0; i < m; i++) {
+		for (j = 0; j < n; j++) {
+			cin >> a[i][j];
 		}
+	}
+	cout << "Enter elements of second matrix : ";
+	for (i = 0; i < m; i++) {
+		for (j = 0; j < n; j++) {
+			cin >> b[i][j];
+		}
+	}
+	int s;
+	for (i = 0; i < m; i++) {
+		for (j = 0; j < n; j++) {
+			mult[i][j] = 0;
+			for (s = 0; s < n; s++) {
+				mult[i][s] += a[i][s] * b[s][j];
+			}
+		}
+	}
+	cout << "Multipliying both the matrices gives : \n";
+	for (i = 0; i < m; i++) {
+		for (s = 0; s < n; s++)
+			cout << mult[i][s]<<" ";
+		cout << endl;
+	}
+}
+void matrix::matrix_trace() {
+	int a[10][10],m,n,i,j, t = 0;
+	cout << "Enter number of rows and coloumns of the matrix : ";
+	cin >> m >> n;
+	cout << "Enter elements : ";
+	for (i = 0; i < m; i++) {
+		for (j = 0; j < n; j++) {
+			cin >> a[i][j];
+			if (i == j) {
+				t += a[i][j];
+			}
+		}
+	}
+	cout << "Trace of matrix is : " << t << endl;
 }
 int main() {
-	int m, n;
-	cout << "Enter size of matrix : "<<endl;
-	cin >> m >> n;
-	matrix A(m, n);
-	cout << "Enter matrix elements row by row : " << endl;
-	int i, j, value;
-	for(i=0;i<m;i++)
-		for (j = 0; j < n; j++) {
-			cin >> value;
-			A.getelement(i, j, value);
-		}
-	cout << "Enter size of another matrix : " << endl;
-	int o, p;
-	cin >> o >> p;
-	matrix B(o, p);
-	cout << "Enter matrix elements row by row : " << endl;
-	int k, l, valuee;
-	for (k = 0; k < o; k++)
-		for (l = 0; l < p; l++) {
-			cin >> valuee;
-			B.getelement(k, l, valuee);
-		}
-	cout << "Matrix A: "; A.putelement(i,j);
-	cout << "\nMatrix B: "; B.putelement(k, l);
-	cout << "\nTranspose A: "; A.matrix_transpose();
-	cout << "\nTranspose B: "; B.matrix_transpose();
+	matrix A;
+	cout << "Transpose of Matrix \n";
+	A.matrix_transpose();
+	cout << "Addition of Matrix \n";
+	A.matrix_add();
+	cout << "Multiplication of Matrix \n";
+	A.matrix_multiply();
+	cout << "Trace of Matrix \n";
+	A.matrix_trace();
 
 	return 0;
 }

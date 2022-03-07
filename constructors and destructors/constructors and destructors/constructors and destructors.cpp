@@ -1,15 +1,15 @@
 #include<iostream>
 using namespace std;
+int c = 0;
 class alpha {
-	int count = 0;
 public:
 	alpha() {
-		count++;
-		cout << "\nNo: of object created : " << count;
+		c++;
+		cout << "\nNo: of object created : " << c;
 	}
 	~alpha() {
-		cout << "\nNo: of object destroyed : " << count;
-		count--;
+		cout << "\nNo: of object destroyed : " << c;
+		c--;
 	}
 };
 int main() {

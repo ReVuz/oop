@@ -1,0 +1,24 @@
+﻿  complex1.cpp
+C:\Users\HP\Documents\c++ projects\source\repos\complex1\complex1\complex1.cpp(9,17): error C2533: 'complex': constructors not allowed a return type
+C:\Users\HP\Documents\c++ projects\source\repos\complex1\complex1\complex1.cpp(10,25): error C2533: 'complex': constructors not allowed a return type
+C:\Users\HP\Documents\c++ projects\source\repos\complex1\complex1\complex1.cpp(12,2): error C2533: 'complex': constructors not allowed a return type
+C:\Users\HP\Documents\c++ projects\source\repos\complex1\complex1\complex1.cpp(16,17): error C2533: 'complex::{ctor}': constructors not allowed a return type
+C:\Users\HP\Documents\c++ projects\source\repos\complex1\complex1\complex1.cpp(16,45): error C2556: 'complex::complex(float,float)': overloaded function differs only by return type from 'complex::complex(float,float)'
+C:\Users\HP\Documents\c++ projects\source\repos\complex1\complex1\complex1.cpp(11): message : see declaration of 'complex::complex'
+C:\Users\HP\Documents\c++ projects\source\repos\complex1\complex1\complex1.cpp(16,45): error C2084: function 'complex::complex(float,float)' already has a body
+C:\Users\HP\Documents\c++ projects\source\repos\complex1\complex1\complex1.cpp(11): message : see previous definition of '{ctor}'
+C:\Users\HP\Documents\c++ projects\source\repos\complex1\complex1\complex1.cpp(22,16): error C2533: 'complex::{ctor}': constructors not allowed a return type
+C:\Users\HP\Documents\c++ projects\source\repos\complex1\complex1\complex1.cpp(22,33): error C2556: 'complex::complex(float)': overloaded function differs only by return type from 'complex::complex(float)'
+C:\Users\HP\Documents\c++ projects\source\repos\complex1\complex1\complex1.cpp(10): message : see declaration of 'complex::complex'
+C:\Users\HP\Documents\c++ projects\source\repos\complex1\complex1\complex1.cpp(22,33): error C2084: function 'complex::complex(float)' already has a body
+C:\Users\HP\Documents\c++ projects\source\repos\complex1\complex1\complex1.cpp(10): message : see previous definition of '{ctor}'
+C:\Users\HP\Documents\c++ projects\source\repos\complex1\complex1\complex1.cpp(30,18): error C2264: 'complex::complex': error in function definition or declaration; function not called
+C:\Users\HP\Documents\c++ projects\source\repos\complex1\complex1\complex1.cpp(34,14): error C2264: 'complex::complex': error in function definition or declaration; function not called
+C:\Users\HP\Documents\c++ projects\source\repos\complex1\complex1\complex1.cpp(37,18): error C2440: '<function-style-cast>': cannot convert from 'initializer list' to 'complex'
+C:\Users\HP\Documents\c++ projects\source\repos\complex1\complex1\complex1.cpp(37,18): message : No constructor could take the source type, or constructor overload resolution was ambiguous
+C:\Users\HP\Documents\c++ projects\source\repos\complex1\complex1\complex1.cpp(40,10): error C2086: 'complex A': redefinition
+C:\Users\HP\Documents\c++ projects\source\repos\complex1\complex1\complex1.cpp(30): message : see declaration of 'A'
+C:\Users\HP\Documents\c++ projects\source\repos\complex1\complex1\complex1.cpp(42,10): error C2086: 'complex B': redefinition
+C:\Users\HP\Documents\c++ projects\source\repos\complex1\complex1\complex1.cpp(34): message : see declaration of 'B'
+C:\Users\HP\Documents\c++ projects\source\repos\complex1\complex1\complex1.cpp(44,10): error C2086: 'complex C': redefinition
+C:\Users\HP\Documents\c++ projects\source\repos\complex1\complex1\complex1.cpp(35): message : see declaration of 'C'

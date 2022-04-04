@@ -1,0 +1,2 @@
+﻿  complex friend.cpp
+C:\Users\HP\Documents\c++ projects\source\repos\complex friend\complex friend\complex friend.cpp(33): error C4700: uninitialized local variable 'b' used

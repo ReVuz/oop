@@ -1,0 +1,4 @@
+﻿  Fibonacci series.cpp
+C:\Users\HP\Documents\c++ projects\source\repos\Fibonacci series\Fibonacci series.cpp(20,5): error C2601: 'main': local function definitions are illegal
+C:\Users\HP\Documents\c++ projects\source\repos\Fibonacci series\Fibonacci series.cpp(7): message : this line contains a '{' which has not yet been matched
+C:\Users\HP\Documents\c++ projects\source\repos\Fibonacci series\Fibonacci series.cpp(7): fatal error C1075: '{': no matching token found

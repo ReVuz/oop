@@ -1,0 +1,4 @@
+﻿  factorial of a number.cpp
+C:\Users\HP\Documents\c++ projects\source\repos\factorial of a number\factorial of a number.cpp(16,5): error C2601: 'main': local function definitions are illegal
+C:\Users\HP\Documents\c++ projects\source\repos\factorial of a number\factorial of a number.cpp(7): message : this line contains a '{' which has not yet been matched
+C:\Users\HP\Documents\c++ projects\source\repos\factorial of a number\factorial of a number.cpp(7): fatal error C1075: '{': no matching token found

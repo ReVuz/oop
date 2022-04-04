@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "d334e9fe-17ca-44af-a2e9-2f7921c2a87e": {
+      "ProjectGuid": "d334e9fe-17ca-44af-a2e9-2f7921c2a87e",
+      "DisplayName": "factorial of a number",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

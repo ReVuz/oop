@@ -1,0 +1,2 @@
+C:\Users\HP\source\repos\factorial of a number\x64\Debug\factorial of a number.exe
+C:\Users\HP\Documents\c++ projects\source\repos\factorial of a number\x64\Debug\factorial of a number.exe

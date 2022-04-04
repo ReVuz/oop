@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "6cdc184c-fde8-4ca1-9524-1efbd7c33c7c": {
+      "ProjectGuid": "6cdc184c-fde8-4ca1-9524-1efbd7c33c7c",
+      "DisplayName": "classic swap",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

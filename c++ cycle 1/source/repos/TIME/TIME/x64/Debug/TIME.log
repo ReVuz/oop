@@ -1,0 +1,4 @@
+﻿  TIME.cpp
+C:\Users\HP\Documents\c++ projects\source\repos\TIME\TIME\TIME.cpp(21,14): error C2228: left of '.minutes' must have class/struct/union
+C:\Users\HP\Documents\c++ projects\source\repos\TIME\TIME\TIME.cpp(21,14): message : type is 'int'
+C:\Users\HP\Documents\c++ projects\source\repos\TIME\TIME\TIME.cpp(40,39): error C2065: 'r': undeclared identifier

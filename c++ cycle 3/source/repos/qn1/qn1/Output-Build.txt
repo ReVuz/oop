@@ -1,0 +1,4 @@
+﻿Build started...
+1>------ Build started: Project: qn1, Configuration: Debug x64 ------
+1>qn1.cpp
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========

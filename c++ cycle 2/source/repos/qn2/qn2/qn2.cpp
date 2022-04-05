@@ -25,7 +25,14 @@ public:
 	}
 };
 void complex::display(void) {
-	cout << real << " + " << imag << "j" << endl;
+	if(c.y>0){
+		cout << c.x << " + " << c.y << "j" << endl;
+	}
+	else if(c.y<0){
+		cout << c.x << " - " << c.y << "j" << endl;
+	}
+	else
+		cout<<c.x<<endl;
 }
 int main() {
 	int num,ans;

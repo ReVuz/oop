@@ -21,7 +21,6 @@ class matrix
     for(int i=0;i<d1;i++)
     {delete p[i];}
     delete p;
-   cout<<"Object Destroyed \nMemory Released\n"<<endl;
   }
  };
   matrix::matrix(int x,int y)
@@ -124,7 +123,7 @@ return sum;
 		 }
 		}
 	}
-	else{
+	else if(ch==3 or ch==4){
 	     cout<<"Enter number of Rows and Columns of the matrix: ";
 	     cin>>r1>>c1;
 		 p1 = new matrix(r1, c1);

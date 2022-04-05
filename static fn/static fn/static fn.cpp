@@ -5,17 +5,21 @@ class static_fn {
 public:
 	static void showcount()
 	{
-		count++;
-	}
-	void displayCount() {
 		cout << count;
+	}
+	static_fn(){
+		count++;
 	}
 };
 int static_fn::count = 0;
 int main()
-{
+{int ans;
+	do{
 	static_fn a;
 	cout << "Number of objects created: "; a.showcount();
-	static_fn::showcount();
-	a.displayCount();
+	cout<<"\nDo you want to continue ?(1/0) ";
+	cin>>ans;
+	}while(ans);
+		cout<<"Thank you";
+	return 0;
 }

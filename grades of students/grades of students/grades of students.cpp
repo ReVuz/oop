@@ -19,7 +19,7 @@ void students::input(void) {
 }
 void students::display() {
 
-		cout << "Details of student " << name << ": " << endl;
+		cout << "\nDetails of student " << name << ": " << endl;
 		cout << "Name: " << name << endl << "ROll no: " << Roll_no << endl;
 }
 int students::calcgrade(void){
@@ -44,18 +44,19 @@ int students::calcgrade(void){
 	return d;
 }
 int main(){
-	students z;
+	students z[10];
 		int c, i;
 		cout << "Enter number of students: ";
 		cin >> c;
 		for (i = 0; i < c; i++) {
-			z.input();
-			z.display();
-			z.calcgrade();
+			z[i].input();
+		}
+		for (i = 0; i < c; i++) {
+			z[i].display();
+			z[i].calcgrade();
 		}
 	cout << "Thank you";
 	return 0;
 
 }
-
 

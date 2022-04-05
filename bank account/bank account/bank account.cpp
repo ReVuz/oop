@@ -7,11 +7,13 @@ class bank {
 	double balanc;
 public:
 	int newac();
-	void withdraw(float b);
+	void withdraw(void);
 	void deposit(float c);
 	void balance();
 	void ac_statement();
-
+	int ac_num(){
+		return acn;
+		}
 };
 int bank::newac()
 {
@@ -42,14 +44,20 @@ void bank::deposit(float c)
 	balanc += c;
 	cout << "INR " << c << " has been credited to your account " << acn << endl;
 }
-void bank::withdraw(float b)
-{
+void bank::withdraw(void)
+{float b;
+cout<<"Enter amount to withdraw : ";
+cin>>b;
 	balanc -= b;
 	if (balanc < 500)
 	{
-		cout << " Sorry your balance is not sufficient to withdraw " << b << "TK\n"
+		cout << " Sorry your balance is not sufficient to withdraw INR" << b << "\n"
 			<< " You have to store at least INR 500 to keep your account active\n";
 		balanc += b;
+	}
+	else{
+		cout<<"Withdrawal Successfull!";
+		cout<<"\nAvailable balance : "<<balanc<<endl;
 	}
 
 }
@@ -62,7 +70,8 @@ void bank::ac_statement(void)
 }
 int main()
 {int ans;
-	bank account;
+	bank account[10];
+	int ct=0,ac_no,number;
 	do{
 	cout << "WELCOME TO ABC ATM!!!! \nHere are some of the options that are available: "
 	"	\n1. Create a new account \n2. Withdraw \n3. Deposit "
@@ -70,29 +79,38 @@ int main()
 	int num;
 	cin >> num;
 	if (num == 1) {
-		account.newac();
+			account[ct].newac();
+			ct+=1;
+	}if(num>1){
+		cout<<"Please Enter Account number : ";
+		cin>>ac_no;
+		for(int i=0;i<ct+1;i++){
+			if(account[i].ac_num()==ac_no){
+				number=i;
+				break;
+
+			}
+		}
+		
 	}
 		if (num==3)
 		{
 			cout<<"Please enter deposite amount : " << endl;
 			float dp;
 			cin >> dp;
-			account.deposit(dp);
+			account[number].deposit(dp);
 		}
 		if (num == 2) {
-			cout << "Please enter withdrawal amount :" << endl;
-			float wd;
-			cin >> wd;
-			account.withdraw(wd);
+			account[number].withdraw();
 		}
 		if (num == 5) {
 			cout << " Details of the Account Holder :" << endl << endl;
-			account.ac_statement();
+			account[number].ac_statement();
 		}
 		if (num == 4) {
-			account.balance();
+			account[number].balance();
 		}
-		cout << "Do you want to continue ?(1/0) ";
+		cout << "\nDo you want to continue ?(1/0) ";
 		cin >> ans;
 	} while (ans);
 	cout << " Thank you ,see again\n";

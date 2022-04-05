@@ -61,8 +61,9 @@ void bank::ac_statement(void)
 	cout << "Name: " << name<< "\nAccount type: " << typ<< "\nBalance: " << balanc<< endl;
 }
 int main()
-{
+{int ans;
 	bank account;
+	do{
 	cout << "WELCOME TO ABC ATM!!!! \nHere are some of the options that are available: "
 	"	\n1. Create a new account \n2. Withdraw \n3. Deposit "
 		"\n4. Balance Enquiry \n5. Account statement \nChoose any number from below: ";
@@ -91,6 +92,9 @@ int main()
 		if (num == 4) {
 			account.balance();
 		}
+		cout << "Do you want to continue ?(1/0) ";
+		cin >> ans;
+	} while (ans);
 	cout << " Thank you ,see again\n";
 	return 0;
 }

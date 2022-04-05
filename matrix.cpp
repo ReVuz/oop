@@ -136,8 +136,8 @@ return sum;
 		 }
 		 }
 	}
-	   else
-		   break;
+	else
+	   break;
 	matrix C1(r1,c1), C2(r1,c2),C3(c1,r1),C4(c2,r2);
 	 switch(ch)
 	    {

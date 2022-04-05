@@ -35,8 +35,8 @@ int main() {
 	y.getdata(d, e, f);
 	r1.sum(x, y, z);
 	r2.sum(d, e, f);
-	cout << "P = "; p.putdata();
-	cout << "Q = "; q.putdata();
-	cout << "R = "; r.putdata();
+	cout << "First time = "; p.putdata();
+	cout << "Second time = "; q.putdata();
+	cout << "sum = "; r.putdata();
 	return 0;
 }

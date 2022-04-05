@@ -9,8 +9,10 @@ class calc
 public:
 	void get_num(void)
 	{
-		cout << "Enter any two numbers : \n";
-		cin >> a >> b;
+		cout << "Enter a number : ";
+		cin >> a;
+		cout<<"Enter another number: ";
+		cin>>b;
 	}
 	void show_num(void)
 	{
@@ -104,7 +106,7 @@ int main()
 			{
 				div = calc1.
 					division();
-				cout << "Remainder : " << div << endl;
+				cout << "Quotient : " << div << endl;
 			}
 			else {
 				cout << "\nError 404 : Not Found\n";

@@ -17,7 +17,11 @@ public:
 	void get_data();
 	void put_data();
 	~Alpha() {
-		cout << "Memory Released!" << endl;
+		for(int i=0;i<d1;i++){
+			delete p[i];
+		}
+			delete p;
+			cout << "Memory Released!" << endl;
 	}
 };
 

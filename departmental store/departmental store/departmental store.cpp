@@ -50,7 +50,7 @@ int main() {
 	s.cnt();
 	int x;
 	do {
-		cout << "\nWelcome to ABC store!!! "
+		cout << "\n\tABC Departmental Store "
 			<< "\n1. Add an item \n2. Display total value "
 			<< "\n3. Delete an item \n4. Display all items "
 			<< "\n5. Quit"

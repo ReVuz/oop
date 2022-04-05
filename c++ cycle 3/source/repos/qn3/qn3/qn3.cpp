@@ -6,22 +6,23 @@ int main()
 	int ans;
 
 	do{
-		int a, b,x;
+		float a, b,x;
 		cout << "Enter values for a and b\n";
 		cin >> a >> b;
-		x = a / b;
 		try
 		{
-			if (b != 0)
+			if (b == 0)
 			{
+				throw "Exception caught : Division by zero!";
+			}
+			else{				
+				x = a / b;
 				cout << "Division of "<<a<<"/"<<b<<" is : "<<x << endl;
 			}
-			else
-				throw(x);
 		}
-		catch (int c)
+		catch (const char *message)
 		{
-			cout << "Exception caught : x = " << x << endl;
+			cout<<message<<endl;
 			cout << "Division by zero not possible.\n";
 		}
 		cout << "Do you want to continue ?(1/0) ";

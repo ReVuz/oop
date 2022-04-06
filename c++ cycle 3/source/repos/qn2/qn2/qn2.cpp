@@ -9,15 +9,10 @@ class calc
 public:
 	void get_num(void)
 	{
-		cout << "Enter a number : ";
-		cin >> a;
-		cout<<"Enter another number: ";
-		cin>>b;
-	}
-	void show_num(void)
-	{
-		cout << "Number 1 : " << a << endl
-			<< "Number 2 : " << b << endl;
+	cout << "Enter First number : ";
+	cin >>a;
+	cout<<"Enter Second number: ";
+	cin>>b;
 	}
 	T sum(void) { return(a + b); }
 	T subtraction(void) { return(a - b); }
@@ -35,23 +30,60 @@ public:
 
 int main()
 {
-	int ans;
+	int ans,c1;
+	cout << "\n\tClass Templates\n";
+	cout << "Enter the type of data you are going to enter : \n1. Integer \n2. Float \n3. Exit\n";
+	cin >> c1;
 	do
 	{
-		int c1;
-
-		cout << "\n\tClass Templates\n";
-		cout << "Enter the type of data you are going to enter : \n1.Integer \n2.Float \n3. Exit\n";
-		cin >> c1;
 		if (c1 == 1) {
 			int sm, sub, mlt, div;
-			calc <int> calc2;
-			calc2.get_num();
-			calc2.show_num();
 			int c2;
-			cout << "\nChoose from the options below : \n";
-			cout << "1.Addition\n2.Subtraction\n3.Multiplication\n4.Division\n";
+			calc <int>calc1;
+			cout << "\nInteger Operations \nAvailable options : ";
+			cout << "\n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n5. Exit\nChoose any option : ";
 			cin >> c2;
+			cout<<"\n";
+                        calc1.get_num();
+			if (c2 == 1)
+			{
+				sm = calc1.sum();
+				cout << "Sum : " << sm << endl;
+			}
+			else if (c2 == 2)
+			{
+				sub = calc1.subtraction();
+				cout << "Subtraction : " << sub << endl;
+			}
+			else if (c2 == 3)
+			{
+				mlt = calc1.multiply();
+				cout << "Product : " << mlt << endl;
+			}
+			else if (c2 == 4)
+			{
+				div = calc1.division();
+				cout << "Quotient : " << div << endl;
+			}
+			else if(c2==5)
+			{
+				break;
+			}
+			else {
+				cout << "\nError 404 : Not Found\n";
+				continue;
+			}
+		}
+		else if (c1 == 2)
+		{
+			float sm, sub, mlt, div;
+			int c2;
+			calc <float> calc2;
+			cout << "\nFloat Operations\nAvailable options : ";
+			cout << "\n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n5. Exit\nChoose any option : ";
+			cin >> c2;
+			cout<<"\n";
+			calc2.get_num();
 			if (c2 == 1)
 			{
 				sm = calc2.sum();
@@ -72,41 +104,9 @@ int main()
 				div = calc2.division();
 				cout << "Quotient : " << div << endl;
 			}
-			else {
-				cout << "\nError 404 : Not Found\n";
-				continue;
-			}
-		}
-		else if (c1 == 2)
-		{
-			float sm, sub, mlt, div;
-			calc <float> calc1;
-			calc1.get_num();
-			calc1.show_num();
-			int c2;
-			cout << "\nEnter your choice\n";
-			cout << "1.Addition\n2.Subtraction\n3.Multiplication\n4.Division\n";
-			cin >> c2;
-			if (c2 == 1)
+			else if(c2==5)
 			{
-				sm = calc1.sum();
-				cout << "Sum : " << sm << endl;
-			}
-			else if (c2 == 2)
-			{
-				sub = calc1.subtraction();
-				cout << "Subtraction : " << sub << endl;
-			}
-			else if (c2 == 3)
-			{
-				mlt = calc1.multiply();
-				cout << "Product : " << mlt << endl;
-			}
-			else if (c2 == 4)
-			{
-				div = calc1.
-					division();
-				cout << "Quotient : " << div << endl;
+				break;
 			}
 			else {
 				cout << "\nError 404 : Not Found\n";
@@ -120,8 +120,7 @@ int main()
 		cin >> ans;
 
 	} while (ans);
-	cout << "Thank You";
+	cout << "Thank You"<<endl;
 	return 0;
 
 }
-

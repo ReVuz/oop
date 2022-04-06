@@ -2,6 +2,7 @@
 using namespace std;
 const int m = 50;
 class store {
+	string  itemname[m]
 	int itemcode[m];
 	float itemprice[m];
 	int count;
@@ -15,6 +16,9 @@ public:
 void store::getitem(void) {
 	cout << "Enter item code : ";
 	cin >> itemcode[count];
+	
+	cout<<"Enter item name : ";
+	cin>>itemname[count];
 
 	cout << "Enter item cost : ";
 	cin >> itemprice[count];
@@ -40,8 +44,8 @@ void store::displayitems(void) {
 	cout << "\nCode Price\n";
 	int i;
 	for (i = 0; i < count; i++) {
-		cout << "\n" << itemcode[i];
-		cout << "  " << itemprice[i];
+		cout << "\n" << "SL nO \tCode \tName \tPrice";
+		cout << "\n" <<i<<"\t"<<itemcode[i]<<"\t"<<itemname[i]<<"\t"<< itemprice[i];
 	}
 	cout << endl;
 }

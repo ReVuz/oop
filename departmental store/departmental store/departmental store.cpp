@@ -52,7 +52,7 @@ void store::displayitems(void) {
 int main() {
 	store s;
 	s.cnt();
-	int x;
+	int x,ans;
 	do {
 		cout << "\n\tABC Departmental Store "
 			<< "\n1. Add an item \n2. Display total value "
@@ -65,10 +65,13 @@ int main() {
 		case 2:s.displaysum(); break;
 		case 3:s.remove(); break;
 		case 4:s.displayitems(); break;
-		case 5:cout << "Thank you  see again"; break;
+		case 5: break;
 		default:cout << "Error 404! \tNot found ";
+		cout<<"Do you want to continue ?(1/0) ";
+		cin>>ans;
 		}
 			
-	} while (x != 5);
+	} while (ans);
+	cout << "Thank you  see again";
 	return 0;
 }

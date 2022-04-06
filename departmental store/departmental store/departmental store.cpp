@@ -38,6 +38,7 @@ void item::buyitem(void) {
 	for (i = 0; i < count; i++){
 	    if(code == itemcode[i]){
 	     		sum = sum + itemprice[i];
+	     		break;
 	    }
 	    else
 	        cout<<"Item not found "<<endl;

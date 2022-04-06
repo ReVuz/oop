@@ -32,18 +32,28 @@ void item::getitem(void) {
 }
 void item::buyitem(void) {
 	float sum = 0;
-	int i,code;
-	cout<<"Enter the itemcode which you want to buy : ";
-	cin>>code;
-	for (i = 0; i < count; i++){
-	    if(code == itemcode[i]){
+	int i,code,num;
+	cout<<"Enter the number of items : ";
+	cin>>num;
+	code[num];
+	for (i = 0; i < num; i++){int arr;
+		cout<<"Enter the itemcode which you want to buy : ";
+		cin>>arr;
+		code[i]=arr;
+	    if(code[num] == itemcode[i]){
 	     		sum = sum + itemprice[i];
-	     		break;
+	     		
 	    }
 	    else
 	        cout<<"Item not found "<<endl;
 	}
-	cout << "Bill : " << sum<<endl;
+	cout << "Name \tCode \tCost ";
+		for (i = 0; i < num; i++){
+			 if(code[i] == itemcode[i]){
+				cout<<"\n"<<itemname[i]<<"\t"<<itemcode[i]<<"\t"<<itemprice[i]<<endl;
+			}
+		}
+	cout<<"Total bill : "<<sum;
 }
 void item::itemremove(void) {
 	int a;
@@ -64,6 +74,7 @@ void item::itemremove(void) {
 		}
 		else
 	      cout<<"Item not found "<<endl;
+	      break;
 	}
 	
 }

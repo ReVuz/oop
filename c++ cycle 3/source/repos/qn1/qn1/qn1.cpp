@@ -4,8 +4,8 @@ class shape {
 protected:
 	double area;
 public:
-	virtual void get_area(void) {};
-	virtual void show(void) {};
+	virtual void get_area(void)=0;
+	virtual void show(void)=0;
 };
 class circle :public shape {
 	float r;

@@ -36,7 +36,7 @@ void item::getitem(void) {
 }
 void item::buyitem(void) {
 	float sum = 0;
-	int i, num,q;
+	int i, num,q,cnt=0;
 	cout << "Enter the number of items : ";
 	cin >> num;
 	int code[num];
@@ -47,21 +47,47 @@ void item::buyitem(void) {
 			if (code[i] == itemcode[j]) {
 				cout << "Enter the item quantity : ";
 				cin >> q;
+				if(q>itemquantity[j]){
+					cout<<"Error : \nAvailable quantity :"
+					<<itemquantity[j]<<endl;
+					break;
+					}
+				else{
 				sum = sum + itemprice[j]*q;
 				itemquantity[j] = itemquantity[j] - q;
+				cnt++;
+				}
 			}
 		}
 	}
-	cout << "Name \tCode \tQuantity \tCost " << endl;
+	if(count!=num){
+		cout<<"\nSome items may not be Available";
+		}
+	else
+		;
+	cout<<"\nDo you want to print the bill ?(1/0) ";
+	int b;
+	cin>>b;
+	if(b==1){
+	
+	cout << "\n\t\tBill \nSL No |\tName |\tCode |\tCost(per item)" 
+	<<"|\tQuantity |\t Total Cost " 
+	<< endl;
 	for (i = 0; i < num; i++) {
 		for (int j = 0; j < count; j++) {
+			cout<<"_______________";
 			if (code[i] == itemcode[j]) {
-				cout << itemname[j] << "\t" << itemcode[j]
-					<< "\t" <<q<<"\t\t" << itemprice[j]*q << endl;
+				cout <<<<"\n"<<i<<"|\t"<< itemname[j] 
+				<< "|\t" << itemcode[j]
+				<< "|\t" <<itemprice[j]<<"|\t"
+				<<q<<"|\t\t" << itemprice[j]*q << endl;
 			}
 		}
 	}
 	cout << "Total bill : " << sum;
+	}
+	else
+		;
 }
 void item::itemremove(void) {
 	int a;

@@ -9,7 +9,7 @@ class item {
 	int itemquantity;
 public:
 	item(){}
-	item(string a,int b,float c,int d){itemname=a;
+	void getitem(string a,int b,float c,int d){itemname=a;
 	itemcode=b;itemprice=c;itemquantity=d;}
 	void displayitems(void)
 {cout << "\n" << "\t" << itemcode << "\t" << itemname << "\t" <<itemquantity<<"\t\t"<<itemprice;
@@ -69,7 +69,7 @@ do
 			cout << "Enter item quantity : ";
 			cin >> quantity;
 			cont+=1;
-			list[i](name,code,price,quantity);
+			list[i].getitem(name,code,price,quantity);
 		}
 		}
 		else if(choice == 2){

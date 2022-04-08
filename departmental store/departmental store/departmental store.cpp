@@ -1,70 +1,153 @@
 #include<iostream>
 using namespace std;
-const int m = 50;
-class store {
-	int itemcode[m];
-	float itemprice[m];
-	int count;
+int cnt=0;
+int cont=0;
+class item {
+	string  itemname;
+	int itemcode;
+	float itemprice;
+	int itemquantity;
 public:
-	void cnt(void) { count = 0; }
-	void getitem(void);
-	void remove(void);
-	void displayitems(void);
-	void displaysum(void);
-};
-void store::getitem(void) {
-	cout << "Enter item code : ";
-	cin >> itemcode[count];
-
-	cout << "Enter item cost : ";
-	cin >> itemprice[count];
-	count++;
-}
-void store::displaysum(void) {
-	float sum = 0;
-	int i;
-	for (i = 0; i < count; i++)
-		sum = sum + itemprice[i];
-	cout << "Total value : " << sum;
-}
-void store::remove(void) {
-	int a;
-	cout << "Enter item code : ";
-	cin >> a;
-	int i;
-	for (i = 0; i < count; i++)
-		if (itemcode[i] == a)
-			itemprice[i] = 0;
-}
-void store::displayitems(void) {
-	cout << "\nCode Price\n";
-	int i;
-	for (i = 0; i < count; i++) {
-		cout << "\n" << itemcode[i];
-		cout << "  " << itemprice[i];
+	item(){}
+	item(string a,int b,float c,int d){itemname=a;
+	itemcode=b;itemprice=c;itemquantity=d;}
+	void displayitems(void)
+{cout << "\n" << "\t" << itemcode << "\t" << itemname << "\t" <<itemquantity<<"\t\t"<<itemprice;
+cout << endl;}
+	int getcode(void){
+	return itemcode;
 	}
-	cout << endl;
-}
+        int getquantity(void){
+	return itemquantity;
+	}
+	float getprice(void){
+	return itemquantity*itemprice;
+	}
+	void changequantity(int x,int y){
+	if(x==1){
+	itemquantity=itemquantity+y;
+	}
+	else if(x==2){
+	itemquantity=itemquantity-y;
+	}
+	else if(x==3){
+	itemquantity=y;
+	}
+	}
+};
+
 int main() {
-	store s;
-	s.cnt();
-	int x;
-	do {
-		cout << "\nWelcome to ABC store!!! "
-			<< "\n1. Add an item \n2. Display total value "
-			<< "\n3. Delete an item \n4. Display all items "
+	item list[50];item bill[50];
+	int choice,ans;
+do
+{
+		cout << "\n\tABC Departmental Store "
+			<< "\n1. Add an item \n2. Buy an item "
+			<< "\n3. Delete an item \n4. Display Stock "
 			<< "\n5. Quit"
 			<< "\nPlease choose options from below : ";
-		cin >> x;
-		switch (x) {
-		case 1:s.getitem(); break;
-		case 2:s.displaysum(); break;
-		case 3:s.remove(); break;
-		case 4:s.displayitems(); break;
-		case 5:cout << "Thank you  see again"; break;
-		default:cout << "Error 404! \tNot found ";
+		cin>>choice;
+		if(choice==1)
+                {
+		int ad;
+		cout << "How many items do you want to add : ";
+		cin >> ad;
+		int code,quantity;
+		string name;
+		float price;
+		for (int i = 0; i < ad; i++) {
+			cout << "Item " << i + 1 << endl;
+			cout << "Enter item code : ";
+			cin >> code;
+
+			cout << "Enter item name : ";
+			cin >> name;
+
+			cout << "Enter item cost : ";
+			cin >> price;
+
+			cout << "Enter item quantity : ";
+			cin >> quantity;
+			cont+=1;
+			list[i](name,code,price,quantity);
 		}
-			
-	} while (x != 5);
+		}
+		else if(choice == 2){
+		float sum = 0;
+		int answer,q,code;
+		do{
+			cout << "Enter the itemcode which you want to buy : ";
+			cin >> code;
+			for (int j = 0; j < cont; j++) {
+				if(code==list[j].getcode()) {
+					cout << "Enter the item quantity : ";
+					cin >> q;
+					if(q<=list[j].getquantity()){
+						list[j].changequantity(2,q);
+						bill[cnt]=list[j];
+						bill[cnt].changequantity(3,q);
+						cnt++;
+						}
+					else{
+					cout<<"Item Out of Stock"<<endl;
+					}
+				}
+				else{
+				cout<<"Invalid Itemcode"<<endl;
+				}
+			}
+		cout<<"Press 1 to enter next item,\nPress 0 to print the bill :";
+		cin>>answer;
+		}while(answer);
+
+		cout << "\nName \tCode \tCost(per item)" 
+		<<"\tQuantity \t Total Cost " 
+		<< endl;
+		for (int i = 0; i < cnt; i++) {
+			bill[i].displayitems();
+			sum=sum+bill[i].getprice();
+		}
+		cout << "Total bill : "<<sum;
+		 }
+		else if(choice==3){
+		int code,q;
+		cout << "Enter the itemcode which you want to delete : ";
+			cin >> code;
+			for (int j = 0; j < cont; j++) {
+				if(code==list[j].getcode()) {
+					cout << "Enter the item quantity : ";
+					cin >> q;
+					if(q<=list[j].getquantity()){
+						list[j].changequantity(2,q);
+						}
+					else{
+					cout<<"Item Out of Stock"<<endl;
+					}
+				}
+				else{
+				cout<<"Invalid Itemcode"<<endl;
+				}
+			}
+		 }
+		else if(choice==4){
+		cout << "\nName \tCode \tCost(per item)" 
+		<<"\tQuantity \t Total Cost " 
+		<< endl;
+		for (int i = 0; i < cont; i++) {
+			list[i].displayitems();
+		}
+		}
+		else if(choice==5)
+		{
+		 break;
+		}
+		else{
+		cout << "Error 404! \tNot found "<<endl;
+		}
+		cout << "\nDo you want to continue ?(1/0) ";
+		cin >> ans;
+
+	} while (ans);
+	cout << "Thank you  see again";
 	return 0;
 }

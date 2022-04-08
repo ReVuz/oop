@@ -70,17 +70,16 @@ void item::buyitem(void) {
 	cin>>b;
 	if(b==1){
 	
-	cout << "\n\t\tBill \nSL No |\tName |\tCode |\tCost(per item)" 
-	<<"|\tQuantity |\t Total Cost " 
+	cout << "\nSL No \tName \tCode \tCost(per item)" 
+	<<"\tQuantity \t Total Cost " 
 	<< endl;
 	for (i = 0; i < num; i++) {
 		for (int j = 0; j < count; j++) {
-			cout<<"_______________";
 			if (code[i] == itemcode[j]) {
-				cout <<<<"\n"<<i<<"|\t"<< itemname[j] 
-				<< "|\t" << itemcode[j]
-				<< "|\t" <<itemprice[j]<<"|\t"
-				<<q<<"|\t\t" << itemprice[j]*q << endl;
+				cout <<"\n"<<i<<"\t"<< itemname[j] 
+				<< "\t" << itemcode[j]
+				<< "\t" <<itemprice[j]<<"\t"
+				<<q<<"\t\t" << itemprice[j]*q << endl;
 			}
 		}
 	}

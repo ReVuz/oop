@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-class time {
+class Time {
 	int hours, minutes, seconds;
 	int i, j;
 public:
@@ -12,31 +12,27 @@ public:
 	void putdata(void) {
 		cout << hours << " hours : " << minutes << "minutes : " << seconds << "seconds";
 	}
-	void sum(time, time,time);
+	void sum(Time, Time);
 };
-void time::sum(time a, time b,time c) {
+void Time::sum(Time a, Time b) {
+	seconds = a.seconds + b.seconds+(a.minutes + b.minutes) * 60 +(a.hours + b.hours) * 3600;	
 	hours = seconds / 3600;
 	seconds = seconds % 3600;
 	minutes = seconds / 60;
-	minutes = a.minutes + b.minutes + c.minutes;
-	seconds = a.seconds + b.seconds + c.seconds;
-	hours = a.hours + b.hours + c.hours;
-
 }
 int main() {
-	time p, q, r1,r2 ;
+	Time p, q, r;
 	int x, y, z;
-	cout << "Enter time1 in hrs:mins:secs ";
+	cout << "Enter Time1 in hrs:mins:secs ";
 	cin >> x >> y >> z;
 	p.getdata(x, y, z);
-	cout << "Enter time2 in hrs:mins:secs ";
+	cout << "Enter Time2 in hrs:mins:secs ";
 	int d, e, f;
 	cin >> d >> e >> f;
-	y.getdata(d, e, f);
-	r1.sum(x, y, z);
-	r2.sum(d, e, f);
-	cout << "First time = "; p.putdata();
-	cout << "Second time = "; q.putdata();
-	cout << "sum = "; r.putdata();
+	q.getdata(d, e, f);
+	r.sum(p, q);
+	cout << "First Time = "; p.putdata();cout<<endl;
+	cout << "Second Time = "; q.putdata();cout<<endl;
+	cout << "sum = "; r.putdata();cout<<endl;
 	return 0;
 }

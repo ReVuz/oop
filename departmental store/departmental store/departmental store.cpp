@@ -12,8 +12,8 @@ public:
 	void getitem(string a,int b,float c,int d){itemname=a;
 	itemcode=b;itemprice=c;itemquantity=d;}
 	void displayitems(void)
-{cout << "\n" << "\t" << itemcode << "\t" << itemname << "\t" <<itemquantity<<"\t\t"<<itemprice;
-cout << endl;}
+	{cout << itemname << "\t" << itemcode << "\t" <<itemquantity<<"\t\t"<<itemprice
+	<< endl;}
 	int getcode(void){
 	return itemcode;
 	}
@@ -92,16 +92,12 @@ do
 					cout<<"Item Out of Stock"<<endl;
 					}
 				}
-				else{
-				cout<<"Invalid Itemcode"<<endl;
-				}
 			}
 		cout<<"Press 1 to enter next item,\nPress 0 to print the bill :";
 		cin>>answer;
 		}while(answer);
 
-		cout << "\nName \tCode \tCost(per item)" 
-		<<"\tQuantity \t Total Cost " 
+		cout << "\nName \tCode \tQuantity \tCost(per item)"
 		<< endl;
 		for (int i = 0; i < cnt; i++) {
 			bill[i].displayitems();
@@ -124,14 +120,10 @@ do
 					cout<<"Item Out of Stock"<<endl;
 					}
 				}
-				else{
-				cout<<"Invalid Itemcode"<<endl;
-				}
 			}
 		 }
 		else if(choice==4){
-		cout << "\nName \tCode \tCost(per item)" 
-		<<"\tQuantity \t Total Cost " 
+		cout << "\nName \tCode \tQuantity \tCost(per item)"  
 		<< endl;
 		for (int i = 0; i < cont; i++) {
 			list[i].displayitems();

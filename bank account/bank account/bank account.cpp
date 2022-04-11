@@ -73,6 +73,7 @@ int main()
 	bank account[10];
 	int ct=0,ac_no,number;
 	do{
+	int flag=0;
 	cout << "WELCOME TO ABC ATM!!!! \nHere are some of the options that are available: "
 	"	\n1. Create a new account \n2. Withdraw \n3. Deposit "
 		"\n4. Balance Enquiry \n5. Account statement \nChoose any number from below: ";
@@ -90,24 +91,31 @@ int main()
 				break;
 
 			}
+			else
+			{
+			flag = 1;
+			cout<<"Account not found "<<endl;
+			break;
+			}
 		}
 		
 	}
-		if (num==3)
+	
+		if (!flag && num==3)
 		{
 			cout<<"Please enter deposite amount : " << endl;
 			float dp;
 			cin >> dp;
 			account[number].deposit(dp);
 		}
-		if (num == 2) {
+		if (!flag && num == 2) {
 			account[number].withdraw();
 		}
-		if (num == 5) {
+		if (!flag && num == 5) {
 			cout << " Details of the Account Holder :" << endl << endl;
 			account[number].ac_statement();
 		}
-		if (num == 4) {
+		if (!flag && num == 4) {
 			account[number].balance();
 		}
 		cout << "\nDo you want to continue ?(1/0) ";

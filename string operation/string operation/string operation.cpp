@@ -44,8 +44,10 @@ void String::compare(String s1, String s2)
 	int m, n;
 	m = strlen(s1.str);
 	n = strlen(s2.str);
-	if (m <= n)
+	if (m < n)
 		cout << s1.str << " is smaller than " << s2.str << endl;
+	else if (m = n)
+		cout <<"Length of "<< s1.str<<" and "<< s2.str <<" are equal"<< endl;
 	else
 		cout << s1.str << " is smaller than " << s2.str << endl;
 }
